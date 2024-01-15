@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+.app-header {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding: 40px 60px 60px;
+}
+
+.tasks-row {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin-top: 80px;
+}
+
+.add-task {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.add-task input {
+	display: inline-block;
+	height: 36px;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	padding: 5px 10px;
+	width: 300px;
+	font-size: 16px;
+}
+
+.add-task input:focus, .edit-task-field:focus {
+	outline: none;
+}
+
+.add-task button {
+	display: inline-block;
+	height: 36px;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	padding: 5px 10px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	margin-left: 24px;
+	width: 80px;
+}
+
+.add-task button:hover {
+	background-color: rgb(227, 227, 227);
+}
+
+.add-task button:active {
+	transform: translateY(1px);
+}
+
+.task-list, .completed-task {
+	width: 40%;
+	max-width: 450px;
+	border: 1px solid lightgrey;
+	border-radius: 4px;
+	margin-top: 80px;
+}
+
+.task-list-header {
+	margin: 0;
+	padding: 10px 15px;
+	border-bottom: 1px solid lightgray;
+	background-color: #f0f0f0;
+}
+
+.task-list-item {
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid lightgray;
+}
+
+.task-list-item img {
+	cursor: pointer;
+}
+
+.task-name, .completed-task-name {
+	margin: 0 16px 0 12px;
+	flex: 1;
+}
+
+.task-list-item:last-child {
+	border-bottom: none;
+}
+
+.edit-img, .check-img {
+	margin-right: 16px;
+}
+
+.no-task, .taskName {
+	margin: 0;
+	padding: 10px 15px;
+}
+
+.edit-task-field {
+	margin: 0 16px 0 12px;
+	flex: 1;
+	border: none;
+	border-bottom: 1px solid lightgrey;
+}
+
+table, td, th {
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+td, th {
+	padding: 10px;
+}
+
+.taskListContainer{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: start;
+}
+
+.taskDiv{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 10px;
+}
+
+.taskDiv button{
+	margin-left: 5px;
+}
+
+.taskDiv .taskName{
+	flex: 1;
+	padding: 0;
+}

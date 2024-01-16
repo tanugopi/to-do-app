@@ -7,6 +7,7 @@ function App() {
     const [inputValue, setInputValue] = useState("");
     const [taskList, setTaskList] = useState([]);
     const [completedTaskList, setCompletedTaskList] = useState([]);
+    const [edit, setEdit] = useState(false)
 
     const inputElement = useRef(); // getting a virtual DOM element
 
@@ -35,6 +36,27 @@ function App() {
         setTaskList(newTaskList);      
         setCompletedTaskList(newCompletedTaskList);       
     }
+
+    function undoClick(index) {
+        const newUndoTaskList = [];
+        let newundoCompletedTaskList = [...taskList]
+        for (let i = 0; i < completedTaskList.length; i++) {
+            if (i !== index) {
+                newUndoTaskList.push(completedTaskList[i]);
+            } else {
+                newundoCompletedTaskList.push(completedTaskList[i])
+            }
+        }
+        setCompletedTaskList(newUndoTaskList); 
+        setTaskList(newundoCompletedTaskList);      
+
+    }
+
+//     function editClick(index) {
+//    if()
+//     }
+
+
 
     function deleteClick(listName, index){
         const isDelete = window.confirm("Are you sure you want to delete?")
@@ -75,7 +97,7 @@ function App() {
                 </div>
                 <div className="taskListContainer">
                     <TaskList taskList={taskList} doneClick={doneClick} deleteClick={deleteClick} />
-                    <CompletedTask completedTaskList={completedTaskList} deleteClick={deleteClick} />
+                    <CompletedTask completedTaskList={completedTaskList} deleteClick={deleteClick} undoClick = {undoClick}/>
                 </div>
             </div>
         </div>

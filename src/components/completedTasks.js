@@ -11,7 +11,7 @@ function CompletedTask(props) {
                             <p className="taskName">
                                 {task}
                             </p>
-                            <button>Undo</button>
+                            <button onClick={() => props.undoClick(index)}>Undo</button>
                             <button onClick={() => props.deleteClick("completedTask", index)}>Delete</button>
                         </div>
                     );
